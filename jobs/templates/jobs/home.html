@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Album example · Bootstrap v5.1</title>
+    <title>James Speller</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -48,15 +48,16 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">James Speller</a>
+          <a class="navbar-brand" href="{%url 'home'%}">James Speller</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-              <a class="nav-link" aria-current="page" href="#">LinkedIn</a>
-              <a class="nav-link" href="#">Resume</a>
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Home</a>
+              <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/jamespeller" target="_blank">LinkedIn</a>
+              <a class="nav-link" href="https://github.com/74M35" target="_blank">GitHub</a>
+              <a class="nav-link" href="{%url 'allblogs'%}">Blog</a>
             </div>
           </div>
         </div>
@@ -69,7 +70,7 @@
     <div class="row py-lg-1">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Hey! I'm James</h1>
-        <p class="lead text-muted">Hey, this is my portfolio of all my projects. I have created this website using a combination of Django and Bootstrap</p>
+        <p class="lead text-muted">Hey, this is my portfolio of all my projects. I have created this website using a combination of Django and Bootstrap. If you would like to get in contact with me please feel free to message me on LinkedIn or via email with the buttom below. My CV is available upon request!</p>
         <p>
           <a href="mailto: J@miee.uk?subject=Hey, your website is cool!&body=Feel free to email me whatever you want to say" class="btn btn-primary my-2">Email Me</a>
         </p>
