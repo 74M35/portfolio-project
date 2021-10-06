@@ -49,7 +49,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-              <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Home</a>
+              <a class="nav-link" aria-current="page" href="{%url 'home'%}">Home</a>
               <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/jamespeller" target="_blank">LinkedIn</a>
               <a class="nav-link" href="https://github.com/74M35" target="_blank">GitHub</a>
               <a class="nav-link" href="{%url 'allblogs'%}">Blog</a>
@@ -64,28 +64,25 @@
   <section class="py-4 text-center container">
     <div class="row py-lg-1">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hey! I'm James</h1>
-        <p class="lead text-muted">Hey, this is my portfolio of all my projects. I have created this website using a combination of Django and Bootstrap. If you would like to get in contact with me please feel free to message me on LinkedIn or via email with the buttom below. My CV is available upon request!</p>
-        <p>
-          <a href="mailto: J@miee.uk?subject=Hey, your website is cool!&body=Feel free to email me whatever you want to say" class="btn btn-primary my-2">Email Me</a>
-        </p>
+        <h1 class="fw-light">There are {{count}} words in your text</h1>
+          <a href="{% url 'wordCountStart' %}" class="btn btn-primary my-2">Start Again</a>
       </div>
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
+  <div class="album py-6 bg-light">
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mx-auto">
-        {% for job in jobs.all %}
+      <div class="row g-3 mx-auto">
+        <p>{{fullText}}</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 mx-auto">
+        {% for word, countTotal in sortedWords%}
         <div class="col">
           <div class="card shadow-sm">
-            <img class="card-img-top image-fluid" src="{{ job.image.url }}" width="100%" height="300"/>           
-            <div class="card-body">
-              <p class="card-text text-center">{{ job.summary }}</p>
+              <p class="card-text text-center">{{word}} - {{countTotal}}</p>
             </div>
-          </div>   
-        </div>
+          </div>
         {% endfor %}
+        </div>
       </div>
     </div>
   </div>
