@@ -65,4 +65,4 @@ def upvote_home(request, product_id):
             product.voters.add(request.user)
             product.save()
 
-        return redirect('home')
+        return redirect('PHhome')
