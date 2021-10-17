@@ -53,7 +53,7 @@ def upvote(request, product_id):
         product.votesTotal += 1
         Vote(product_id=product.id, voter_id=request.user.id).save()
         product.save()
-        return redirect('/products/' + str(product.id))
+        return redirect('/producthunt/products/' + str(product.id))
 
 
 @login_required(login_url="/accounts/signup")
