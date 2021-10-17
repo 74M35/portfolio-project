@@ -1,11 +1,11 @@
 {%extends 'base.html'%}
 {%block content%}
-
+{%load static%}
 <h1>Sign Up!</h1>
 {% if error %}
 <b><i style="color:orange">{{error|linebreaksbr}}</i></b>
 {%endif%}
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="{%static 'jquery-1.9.1.js' %}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
     // do not allow users to enter spaces:
