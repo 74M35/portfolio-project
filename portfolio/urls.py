@@ -25,4 +25,5 @@ urlpatterns = [
     path('', jobs.views.home, name='home'),
     path('blog/', include('blog.urls')),
     path('wordCount/', include('wordCount.urls')),
+    path('producthunt/', include('productHunt.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
