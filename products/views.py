@@ -12,7 +12,10 @@ def home(request):
 @login_required (login_url='login')
 def create(request):
     if request.method == "POST":
-        if request.POST['title'] and request.POST['body'] and request.POST['url'] and request.FILES['image']:
+        image = request.POST.get('image')
+        if image == "":
+            return render(request, 'products/create.html', {'error':'All fields are required'})
+        elif request.POST['title'] and request.POST['body'] and request.POST['url'] and request.FILES['image']:
             product = Product()
             product.title = request.POST['title'].title()
             product.body = request.POST['body']
@@ -26,7 +29,7 @@ def create(request):
             product.save()
             return redirect('/producthunt/products/' + str(product.id))
         else:
-            return render(request, 'products/create.html', {'error':'All fields are required'})
+            return render(request, '/producthunt/products/create.html', {'error':'All fields are required'})
     else:
         return render(request, 'products/create.html')
 
